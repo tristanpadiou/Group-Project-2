@@ -2,6 +2,9 @@
 ## Introduction
 Welcome to the Wine Quality Analysis project! In this repository, we apply machine learning to predict the factors influencing wine quality. Wine, a beverage cherished globally for its diverse flavors and aromas, is produced through a complex interplay of grape variety, fermentation process, and environmental conditions.
 This project leverages machine learning techniques to analyze a dataset containing physicochemical properties of different wines alongside their quality ratings. By employing various predictive models, our goal is to identify key features that contribute to wine quality, enabling producers and enthusiasts alike to make informed decisions.
+
+---
+
 ## Overview
 Analysis and classification of the quality of wine was performed using machine learning. This README consolidates the key components of our machine learning project, which focuses on classification tasks, dimensionality reduction, model evaluation, and optimization through resampling techniques. The project leverages various machine learning algorithms to build robust models for predicting outcomes based on a given dataset.
 ## Part 1: Data Preparation and Exploration
@@ -54,6 +57,51 @@ Resampling and Evaluation:
     Best performing method: Random Over Sampler with an accuracy of 81%.
 
 Balanced Accuracy Score: The score for the model trained with SMOTE was recorded as 0.76, indicating improved performance for the minority class.  
+
+---
+
+# Installation Instructions
+
+1. **Clone or Download the Repository**
+   - Clone the repository using Git:
+     ```bash
+     git clone https://github.com/tristanpadiou/Group-Project-2.git
+     ```
+   - Or download the project as a zip file from the repository and extract it.
+
+2. **Navigate to the Project Directory**
+   ```bash
+   cd Group-Project-2
+   ```
+
+3. **Install Required Packages**
+   - Install the necessary packages using the following command:
+     ```bash
+     pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn scipy
+     ```
+
+4. **Data Preparation**
+   - The project includes two wine datasets (`winequality-red.csv` and `winequality-white.csv`), which are located in the `Resources` folder. Ensure they remain in this location for the code to run correctly.
+
+5. **Running the Jupyter Notebooks**
+   - Start Jupyter notebooks by executing:
+     ```bash
+     jupyter notebook
+     ```
+   - Open the following notebooks and follow the instructions within:
+     - `Model_Training.ipynb`
+     - `WineRatingDeepAnalysis.ipynb`
+
+6. **Running the Python Script**
+   - To run the machine learning pipeline directly, execute:
+     ```bash
+     python pipelinee.py
+     ```
+
+7. **Results and Output**
+   - Both the notebooks and Python script will generate predictions and visualizations based on the provided wine quality data.
+
+---
 
 ## Key Libraries Used
 Pandas: For data manipulation.
