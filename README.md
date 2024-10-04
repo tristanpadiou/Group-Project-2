@@ -58,7 +58,9 @@ Resampling and Evaluation:
   Classification reports are generated, highlighting performance metrics:
     Best performing method: Random Over Sampler with an accuracy of 81%.
 
-Balanced Accuracy Score: The score for the model trained with SMOTE was recorded as 0.76, indicating improved performance for the minority class.  
+Balanced Accuracy Score: The score for the model trained with SMOTE was recorded as 0.76, indicating improved performance for the minority class. 
+
+In the end, we used SMOTE for its ability to perform well with both white and red wine.
 
 ---
 
@@ -115,5 +117,5 @@ Scikit-learn: For machine learning algorithms, model evaluation, and metrics.
 Imbalanced-learn: For implementing resampling techniques.
 
 ## Conclusion
-In this project, we aimed to discover whether we could accurately predict the quality of wine based on its measurable chemical properties. Through data exploration and model development we were able to demonstrate that it is indeed possible to classify wine quality using these features. We came to the conclusion that the most important factor for a wine's rating is alcohol content as shown in both red and white wines. However, differences start to appear when we look at the second and third most important aspects. In white wine its density at number two and free sulfur dioxide at three. In contrast, sulfates rank second in importance for red wine, and the volatile acidity is third. This project successfully demonstrates a comprehensive approach to data preparation, exploration, model training, and optimization for classification of wine quality. Our Random Forest Classifier achieved a very good balanced accuracy, showing the model's strong performance. By applying resampling methods such as SMOTE, we enhance the model's ability to predict outcomes accurately, particularly in the presence of class imbalances. The results demonstrated the value of machine learning in predicting wine quality based on measurable chemical properties, and shows a promising path ahead for wine producers to enhance and control the quality of their wine in a much more efficient way.
+In this project, we aimed to discover whether we could accurately predict the quality of wine based on its measurable chemical properties. Through data exploration and model development we were able to demonstrate that it is indeed possible to classify wine quality using these features. We came to the conclusion that the most important factor for a wine's rating is alcohol content as shown in both red and white wines. However, differences start to appear when we look at the second and third most important aspects. In white wine its density at number two and free sulfur dioxide at three. In contrast, sulfates rank second in importance for red wine, and the volatile acidity is third. This project successfully demonstrates a comprehensive approach to data preparation, exploration, model training, and optimization for classification of wine quality. Our Random Forest Classifier achieved a very good balanced accuracy, showing the model's strong performance. By applying resampling methods such as SMOTE and RandomOverSampler, we enhance the model's ability to predict outcomes accurately, particularly in the presence of class imbalances. The results demonstrated the value of machine learning in predicting wine quality based on measurable chemical properties, and shows a promising path ahead for wine producers to enhance and control the quality of their wine in a much more efficient way.
 
