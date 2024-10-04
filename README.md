@@ -60,7 +60,12 @@ Resampling and Evaluation:
 
 Balanced Accuracy Score: The score for the model trained with SMOTE was recorded as 0.76, indicating improved performance for the minority class. 
 
-In the end, we used SMOTE for its ability to perform well with both white and red wine.
+In the end, because the best resampler would vary between the Red and White wine datasets, we created a function to pick for us.
+
+## Part 6: Model Optimization with Hyperparameter Tuning
+
+For tuning the hyperparameters of random forest we used Gridsearch CV which would fit the model multiple times with different settings.
+After running it would then give us the best hyperparameters to use.
 
 ---
 
@@ -97,7 +102,7 @@ In the end, we used SMOTE for its ability to perform well with both white and re
      - `WineRatingDeepAnalysis.ipynb`
 
 6. **Running the Model_training.ipynb**
-   - This file makes use of the functions in the Pipeline.py file to train the model on the two datasets with as little code as possible
+   - This file makes use of the functions in the Pipelinee.py file to train the model on the two datasets with as little code as possible
 
 7. **Results and Output**
    - Both the notebooks and Python script will generate predictions and visualizations based on the provided wine quality data.
