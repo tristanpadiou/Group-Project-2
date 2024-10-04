@@ -96,11 +96,8 @@ In the end, we used SMOTE for its ability to perform well with both white and re
      - `Model_Training.ipynb`
      - `WineRatingDeepAnalysis.ipynb`
 
-6. **Running the Python Script**
-   - To run the machine learning pipeline directly, execute:
-     ```bash
-     python pipelinee.py
-     ```
+6. **Running the Model_training.ipynb**
+   - This file makes use of the functions in the Pipeline.py file to train the model on the two datasets with as little code as possible
 
 7. **Results and Output**
    - Both the notebooks and Python script will generate predictions and visualizations based on the provided wine quality data.
