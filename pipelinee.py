@@ -4,8 +4,10 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.metrics import balanced_accuracy_score
-from imblearn.over_sampling import SMOTE
+from sklearn.metrics import balanced_accuracy_score,accuracy_score
+from imblearn.combine import SMOTEENN
+from imblearn.over_sampling import SMOTE,RandomOverSampler
+from imblearn.under_sampling import ClusterCentroids,RandomUnderSampler
 
 # data cleaning function
 
@@ -38,10 +40,25 @@ def training(df):
     X_scaled = scaler.fit_transform(X)
     X_train_orig, X_test_orig, y_train_orig, y_test_orig = train_test_split(X_scaled, y_encoded, test_size=0.2, random_state=1)
     
-    # resampling
-    smote=SMOTE(random_state=1, sampling_strategy='auto')
-    X_resampled, y_resampled = smote.fit_resample(X_train_orig, y_train_orig)
-
+    # resampling: creating an automation to pick the best sampling method
+    samplers=[RandomOverSampler(random_state=1),SMOTE(random_state=1, sampling_strategy='auto'),SMOTEENN(random_state=1),ClusterCentroids(random_state=1),RandomUnderSampler(random_state=1)]
+    Scores=[]
+    for sampler in samplers:
+        sample=sampler
+        X_resampled, y_resampled = sample.fit_resample(X_train_orig, y_train_orig)
+        cc_model = RandomForestClassifier()
+        cc_model.fit(X_resampled, y_resampled)
+        cc_y_pred = cc_model.predict(X_test_orig)
+        Scores.append([
+            accuracy_score(cc_y_pred,y_test_orig),
+            sampler
+        ])
+    sorted_scores = sorted(Scores, reverse=True)
+    best_resampler = sorted_scores[0][1]
+    print(f'resampling method used: {best_resampler}')
+    # resampling with best resampler
+    resampler=best_resampler
+    X_resampled, y_resampled = resampler.fit_resample(X_train_orig, y_train_orig)
 
 
     # hyperparameter tuning
@@ -62,7 +79,7 @@ def training(df):
     cc_model.fit(X_resampled, y_resampled)
     cc_y_pred = cc_model.predict(X_test_orig)
 
-    print('balanced_accuracy_score of Random Forest Classifier:')
-    print(balanced_accuracy_score(y_test_orig, cc_y_pred))
+    print('accuracy_score of Random Forest Classifier:')
+    print(accuracy_score(y_test_orig, cc_y_pred))
     print('Classification report of Random Forest Classifier:')
     print(classification_report(y_test_orig, cc_y_pred, target_names=le.classes_))
