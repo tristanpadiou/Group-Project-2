@@ -38,6 +38,8 @@ Logistic Regression on PCA Data: Model fitting and evaluation yield an accuracy 
 
 Comparison with Original Dataset: Logistic Regression on original features achieved an accuracy of 79.95%, showing comparable results.
 
+For this reason, we didn't use PCA.
+
 ## Part 5: Model Optimization with Resampling Techniques
 Imbalance Handling: Various sampling techniques from imblearn are implemented to address class imbalance:
 
