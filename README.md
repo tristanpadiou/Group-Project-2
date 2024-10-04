@@ -62,7 +62,7 @@ Balanced Accuracy Score: The score for the model trained with SMOTE was recorded
 
 In the end, because the best resampler would vary between the Red and White wine datasets, we created a function to pick for us.
 
-Hyperparameter Tuning:
+## Part 5: Model Optimization with Hyperparameter Tuning
 
 For tuning the hyperparameters of random forest we used Gridsearch CV which would fit the model multiple times with different settings.
 After running it would then give us the best hyperparameters to use.
