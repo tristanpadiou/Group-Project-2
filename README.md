@@ -102,7 +102,7 @@ After running it would then give us the best hyperparameters to use.
      - `WineRatingDeepAnalysis.ipynb`
 
 6. **Running the Model_training.ipynb**
-   - This file makes use of the functions in the Pipelinee.py file to train the model on the two datasets with as little code as possible
+   - This file makes use of the functions in the p_utils.py file to train the model on the two datasets with as little code as possible
 
 7. **Results and Output**
    - Both the notebooks and Python script will generate predictions and visualizations based on the provided wine quality data.
